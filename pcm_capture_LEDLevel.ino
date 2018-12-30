@@ -26,7 +26,6 @@
 AudioClass *theAudio;   // Singleton? 
 Adafruit_DotStar strip = Adafruit_DotStar(NUMPIXELS, DOTSTAR_BRG);
 
-static const int32_t recoding_frames = 1600;   // 1600 frames of 2048 samples at 16000 samples/Sec = 204.8 seconds
 static const int32_t buffer_size = 4096;      // 2048 samples per process for fft, 2 bytes per, 1 ch mono,  each frame is 0.128 seconds
 static char          s_buffer[buffer_size];
 
@@ -172,17 +171,7 @@ void loop() {
     }
 
 
-  /* Stop Recording */
-  if (total_size > (recoding_frames*buffer_size))
-    {
-      theAudio->stopRecorder();
-
-      /* Get ramaining data(flushing) */
-      sleep(1); /* For data pipline stop */
-      execute_frames();
-      
-      goto exitRecording;
-    }
+  /* Never Stop Recording! */
 
   if (ErrEnd)
     {
