@@ -106,7 +106,7 @@ void signal_process(uint32_t size)    // this does not automatically get buffer_
       sigmax = cc.target; 
     }
   }
-  printf("%d %d\n",size,sigmax);
+  //printf("%d %d\n",size,sigmax);
   // map sigmax 0 to 65535  to  leds 0 to 143
   uint8_t maxled = map(sigmax,0,32767,0,144);
   for(idx=0; idx<maxled; idx++)
