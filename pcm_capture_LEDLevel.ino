@@ -26,7 +26,7 @@
 AudioClass *theAudio;   // Singleton? 
 Adafruit_DotStar strip = Adafruit_DotStar(NUMPIXELS, DOTSTAR_BRG);
 
-static const int32_t buffer_size = 4096;      // room for 2048 samples, 2 bytes per, 1 ch mono
+static const int32_t buffer_size = 512;      // 256 samples per call at 16K, 2 bytes per, 1 ch mono
 static char          s_buffer[buffer_size];
 
 bool ErrEnd = false;
