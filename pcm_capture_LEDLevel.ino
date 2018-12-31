@@ -86,7 +86,7 @@ void setup()
  */
 
 
-void signal_process(uint32_t size)    // this does not automatically get buffer_size each time! Usually 512 for 256 samples
+void signal_process(uint32_t size)
 {
   uint32_t ON_color = 0x808080;      // 'On' color - mid-white is darned bright!
   uint32_t OFF_color = 0x000000;      // 'Off' color, off
